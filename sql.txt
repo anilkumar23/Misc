@@ -1,0 +1,379 @@
+DBCC CHECKIDENT ('LowesCustomerProductCategoryMap', NORESEED) 4294967296-1297445338
+
+Search_NM_GetRecommendedProductsFromCategory]
+Search_NM_GetNActiveDefaults
+
+		select count(*) from [Adjug].[dbo].[AdvertiserCampaignOfferProductDetailsTmp]
+		delete from [Adjug].[dbo].[AdvertiserCampaignOfferProductDetailsTmp] order by 
+
+
+
+
+
+		select top 500 * from AutomaticFeedUpdateLog where feedid = 710 order by date desc
+
+		select * from AdvertiserCampaignOfferProductCustomerIDBridge where feedid = 707
+
+		
+		select * from AdvertiserCampaignOfferProductInternalIdentifierBridge where feedID=683
+		
+	
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='g:price'
+		where FeedID=710 and FieldID =3
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='Product Title'
+		where FeedID=683 and FieldID =2
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='Shortened Title'
+		where FeedID=683 and FieldID =103
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='description'
+		where FeedID=710 and FieldID =7
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='g:custom_label_0'
+		where FeedID=710 and FieldID =8
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName=''
+		where FeedID=710 and FieldID =100
+
+
+
+		insert into AdvertiserCampaignOfferProductInternalIdentifierBridge(FeedID, FieldID, InternalIdentifierName) values
+		(712, 1, 'id'),(712, 2, 'title'),(712, 3, 'price'),(712, 5, 'image'),(712, 6, '' ),(712, 8, '' ),(712, 100, '' ),(712, 101, '' ),(712, 102, '' ),(712, 103, '' ),(712, 104, '' ),(712, 105, '' ),(712, 106, '' ),(712, 107, '' ),(712, 108, '' ),(712, 109, '' ),(712, 110, '' )
+															
+
+		select * from AdvertiserCampaignOfferProductInternalIdentifierBridge where FeedID=712
+		select * from AdvertiserProductFeedDetails where feedid = 712
+
+		select * from AdvertiserProductFeedCustomizeType where TypeID =131
+		insert into AdvertiserProductFeedCustomizeType (TypeID, TypeName) values (131, 'Tous')
+
+		select * from AdvertiserCampaignOfferProductDetails where ProductID = 134301828
+
+		select * from AdvertiserCampaignOfferProductCustomerIDBridge where feedid = 626
+
+		select count(*) from AdvertiserCampaignOfferProductDetailsTmp where feedid = 683
+
+		
+		select * from automaticfeedupdatedetails where feedID=180
+		select * from automaticfeedupdatedetails
+
+		update automaticfeedupdatedetails 
+		set feedrefresh = 1
+		where feedid = 180
+
+		update automaticfeedupdatedetails 
+		set AutoUpdate =1
+		where feedid = 180
+
+		update automaticfeedupdatedetails
+		set FeedURLPath='ftp://10.140.8.29/LowesMillWork.csv'
+		where feedid = 683
+
+
+		--ftp://ftp.adjug.com/Lowes/LowesMillWork.txt
+		--ftp://10.140.8.29/LowesMillWork.txt
+
+
+			select * from automaticfeedupdatedetails where feedid =710
+			select * from AdvertiserProductFeedDetails where feedid =707
+
+		select * from AdvertiserProductFeedCustomizeType where TypeID =132
+		insert into AdvertiserProductFeedCustomizeType (TypeID, TypeName) values (132, 'Ford')
+
+		SET IDENTITY_INSERT AdvertiserProductFeedDetails ON
+		insert into AdvertiserProductFeedDetails (FeedID, AdvertiserID, FeedName, FeedURL, Statuscode, Delimiter, NewLineIdentifier, MinutesToExpire,
+		 HitsRequested, TotalHitsRequested, MaxProductClickWindow, TotalProducts, CreatedDate, LastActionDate, CategoryDelimiter, IsImageResize, 
+		 CharacterSetEncoder, IsActiveCheck, RemoveOutOfStock, IsProductImpressionTrackingEnabled, FeedSourceType, CurrencyFormat, NMAdvertiserId,
+		  AdJugAdvertiserID, IsLargeFeed, DefaultURL, FeedType) values (712, 1,'Ford | Nov 2018', '', 1, '\t', '', 0, 1, 0, 0, 0, '', '', null, 0,
+		  'UTF-8', 1, 0, 0, 1, 1, Null, Null, 0, '', '')
+		  SET IDENTITY_INSERT AdvertiserProductFeedDetails OFF
+
+		
+
+		  select * from advertiser
+
+		  select * from automaticfeedupdatedetails where FeedID=180
+
+		  select * from AdvertiserProductFeedCustomizeType where TypeID =131
+
+		  insert into automaticfeedupdatedetails(AutoUpdate, FeedID, FrequencyCap, FeedURLPath, UpdateTime, CustomiseType, CurrencyID, 
+		  Username, Password, clientFileUpdateTime, FeedCheckTime, FeedRefresh, FeedType, ProductDefaultUrl) values
+		  (1, 712, 1440, 'https://api.fordcountrylv.com/vehicles', '', 132, 1, '', '', '2018-10-20 19:16:00.000', '', 1, Null, Null)
+
+		  insert into AdvertiserCampaignOfferProductInternalIdentifierBridge (FeedID, FieldID, InternalIdentifierName) values 
+		 (710,1,'id'), (710,2,'title'), (710,3,'link'), (710,4,'g:price'), (710,5,'description'), (710,6,'g:image_link'), (710, 7,'g:custom_label_0')
+
+
+		 insert into AdvertiserCampaignOfferProductInternalIdentifierBridge (FeedID, FieldID, InternalIdentifierName) values 
+		 (710,8,'g:custom_label_0'), (710,100,'')
+
+		update automaticfeedupdatedetails 
+		set FeedURLPath = 'ftp://10.140.8.29/LowesMillWork.csv'
+		where feedid = 683
+
+
+		update automaticfeedupdatedetails 
+		set FeedURLPath = 'ftp://10.140.8.29/Netmining_FY18.csv'
+		where feedid = 683
+
+
+		--ftp://10.140.8.29/Netmining_FY18.csv
+		--ftp://10.140.8.29/LowesMillWork.csv
+		update automaticfeedupdatedetails 
+		set clientFileUpdateTime='2018-10-20 19:16:00.000'
+		where feedid = 180
+
+		Search_NM_UpdateAdvertisersDefaultProducts_DSPUI
+
+		advertisers_default_products
+
+		clientFileUpdateTime='2018-10-22 19:16:00.000'
+
+		select * from automaticfeedupdatedetails where feedid=683
+
+		select * from AdvertiserCampaignOfferProductInternalIdentifierBridge where feedid = 707
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge
+		set InternalIdentifierName='title'
+		where feedID= and FieldID=2
+
+		626-Upper90
+
+		select * from AdvertiserCampaignOfferProductInternalIdentifierBridge where feedid = 626
+
+		insert into AdvertiserCampaignOfferProductInternalIdentifierBridge(FeedID, FieldID, InternalIdentifierName)
+																Values(707, 102, 'reference')
+
+		update AdvertiserCampaignOfferProductInternalIdentifierBridge 
+		set FieldID = ''
+		where FieldID = 500 AND FeedID=707
+
+		delete from AdvertiserCampaignOfferProductInternalIdentifierBridge
+		where FieldID = 0 AND FeedID=707
+
+		select cast(CustomerProductID as varchar(64)) as CPId from AdvertiserCampaignOfferProductCustomerIDBridge 
+		where feedID=710 and Active=1 and cast(CustomerProductID as varchar(64)) = 000351215
+		order by CPId
+
+		select ProductId, cast(CustomerProductID as varchar(64))  from AdvertiserCampaignOfferProductCustomerIDBridge 
+		where feedID=735 and Active=1
+
+		delete from AdvertiserCampaignOfferProductCustomerIDBridge where feedid = 683 and Active=1
+
+		update AdvertiserCampaignOfferProductCustomerIDBridge
+		set Active=1
+		where FeedId=683 and active=0
+
+		select top 10 * from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 615) and  
+		PictureURL='http://www.rlmedia.io/is/image/PoloGSI/s7-1311681_lifestyle?$rl_470_grid$'
+
+			select top 10 * from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 710) and 
+		 pictureURL='https://www.tous.com/media/catalog/product/cache/image/700x/040ec09b1e35df139433887a97daa66f/7/9/797735041.jpg'
+
+			select count(*) from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683 and active =1
+---------*************************************************************************************-------
+		update AdvertiserCampaignOfferProductDetails
+		set StatusCode=1
+		where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode=6
+---------*************************************************************************************-------
+		update AdvertiserCampaignOfferProductCustomerIDBridge
+		set Active=1
+		where feedid=683 and active =0
+----------------****************************************************------------------
+
+		delete from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode=1
+
+		select * from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode=1
+
+			select top 10 *  from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode=1
+		
+		delete from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683 and active =1
+
+		select count(*) from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683 and active =0
+
+		select * from AdvertiserCampaignOfferProductDetails where ProductID=135088988
+
+		and feedId =683
+
+		1000552963,CRAFTSMAN V20 4-Tool 20-Volt Max Lithium Ion (Li-Ion) Cordless Combo K,CRAFTSMAN Power Tool Combo Kits,
+		Part of the V20 cordless system.  20V MAX 12-in cordless drill with powerful motor provides 280 UWO of power and 2 
+		speed gearbox ranging from 0 to 400 RPM and 0-1500 RPM for demanding tasks.  20V MAX 14-in cordless impact driver provides 
+		1460 in-lbs of torque 2800 RPM and 3100 BPM for heavy duty fastening.  20V MAX cordless reciprocating saw with 1-in stroke length running at 3000 Spms for speed of completing applications.  tool-free blade release allows for quick and easy blade changes.  20V MAX cordless LED pivoting task light with 140 lm for improved visibility.  Compact designs and contoured overmolded handles make working in tight spaces easier and more comfortable.  Storage bag included for ease of transportation and storage.  2 20V MAX high capacity lithium batteries with high performance cells provide ample runtime and increased performance.  20V MAX lithium Ffast charger provides a 60 minute or less charge time on included batteries.,Tools And Hardware,https://www.lowes.com/pd/CRAFTSMAN-V20-4-Tool-20-volt-Max-Lithium-Ion-Li-ion-Cordless-Combo-Kit/1000552963,https://images.lowes.com/product/converted/885911/885911548854lg.jpg,199.00,0.00,08-23-2018,CRAFTSMAN,
+		
+		select count(*) from AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode=6
+
+		select * from AdvertiserCampaignOfferProductDetails where 
+
+		select count (*) from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683 and active =0
+
+		and ProductName='Combo Ranchero')
+		and StatusCode=1 and PictureURL is null
+
+		SELECT		ProductID, COUNT(1) as CNT
+		FROM		AdvertiserCampaignOfferProductCustomerIDBridge where FeedID=707
+		GROUP BY	ProductID order by CNT desc
+
+		SELECT		ProductID, COUNT(0) as CNT
+		FROM		AdvertiserCampaignOfferProductDetails where ProductID in 
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 600) and StatusCode=1
+		GROUP BY	ProductID order by CNT desc
+
+		select * from AdvertiserCampaignOfferProductDetails where ProductId in
+		(select ProductID from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID = 683) and StatusCode = 1
+
+
+
+		select top 10 * from AdvertiserCampaignOfferProductCustomerIDBridge where FeedID=710
+
+		select top 10 * from AdvertiserCampaignOfferProductDetails where feedid =683
+
+		update automaticfeedupdatedetails
+		set clientFileUpdateTime='2018-08-12 19:11:00.000'
+		where feedID =683
+
+		select * from AdvertiserCampaignOfferProductDetails where feedid=683
+
+		select top 10 * from LowesCustomerProductCategoryMap where FeedID=683
+
+		select count
+
+		select * from AdvertiserProductFeedDetails where feedid =683
+
+
+
+		update AdvertiserProductFeedDetails
+		set statuscode=1
+		where FeedID=683
+
+		Query for Schema:
+		select *
+		from INFORMATION_SCHEMA.COLUMNS
+		where TABLE_NAME='AdvertiserCampaignOfferProductCustomerIDBridge'
+
+		Query for PrimaryKey column:
+		SELECT COLUMN_NAME
+		FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+		WHERE OBJECTPROPERTY(OBJECT_ID(CONSTRAINT_SCHEMA + '.' + QUOTENAME(CONSTRAINT_NAME)), 'IsPrimaryKey') = 1
+		AND TABLE_NAME = 'AdvertiserCampaignOfferProductCustomerIDBridge' AND TABLE_SCHEMA = 'dbo'
+
+
+		CHECKIDENT(AdvertiserCampaignOfferProductCategoryTemproryList,reseed,0)
+
+		Dbcc CHECKIDENT(AdvertiserCampaignOfferProductCategoryTemproryList,reseed,0)
+
+		DBCC CHECKIDENT ('LowesCustomerProductCategoryMap', NORESEED); ---2920335923
+
+		Reporting Queries:
+
+		select * from Advertiser where CompanyName ='2016 CPE'
+		select * from Advertiser
+		select * from AdvertiserCampaignOffer where ID=7498
+
+		Reporting SPs:
+
+		usp_ReportingServices_Advertiser_CPE_Video_CampaignCumulativeTrafficCombinedSocialReport
+		usp_ReportingServices_Advertiser_CPE_NonVideo_CampaignDailyTrafficReport_asperUStime
+
+		Reporting Tables:
+
+		Adjug.dbo.AdvertiserCampaignOfferVideoEventsLookUp
+		Adjug.dbo.AdvertiserCampaignOfferVideoPlayerEventsLookUp
+		select * from AdvertiserCampaignOfferVideoEventsLookUp
+
+		
+		C:\Windows\System32\drivers
+
+
+
+		ioc
+bean life cycle
+spring mvc
+scope (Prototype)
+lifesycle of servlet
+how do you create http session
+
+
+
+
+select * from advertiser
+
+select * from AdvertiserCampaignOffer
+
+
+select top 10 * from AffiliateSiteAdSpace
+
+select * from AdvertiserCampaignOfferVideoEventsLookUp
+
+select * from AdvertiserCampaignOfferVideoPlayerEventsLookUp
+
+select * from [AMSADJUG2PR\AMSADJUG2PR].AdJug_Tracking.dbo.Track_VideoEvents where OfferID=39765
+
+select * from Track_VideoEvents
+
+[Split]
+
+[Track_VideoEvents]
+
+usp_ReportingServices_Advertiser_CPE_NonVideo_CampaignDailyTrafficReport_asperUStime
+
+
+select count(*) from vProductMeta
+
+A.F: deploy jenkins cmd:---> -j DYC-166 --area production --location nl-ams --role app --update --verbose --verbose projects/dynamic-creative/auto-feed-update
+
+
+
+
+
+
+
+Map<String, Object> getRecordDetails = getMinAndMaxRecordForProductFeedSaveOperationImpl
+							.runService(feedId);
+					startRecord = (Integer) getRecordDetails.get("@p_StartRecord");
+					endRecord = (Integer) getRecordDetails.get("@p_EndRecord");
+					for (int i = 0; i < totalProductsCount; i++) {
+						if (totalProductsCount > batchSize) {
+							endRecord = startRecord + batchSize - 1;
+						}
+						Map<String, Object> insertORUpdateProductDataObj = new HashMap<String, Object>();
+						insertORUpdateProductDataObj.put(PRODUCT_FEED_FEED_ID, feedId);
+						insertORUpdateProductDataObj.put(PRODUCT_FEED_START_RECORD, startRecord);
+						insertORUpdateProductDataObj.put(PRODUCT_FEED_END_RECORD, endRecord);
+						insertORUpdateProductDataObj.put(PRODUCT_FEED_IS_CUSTOMER_PRODUCT_ID_EXIST,
+								isCustomerProductIdExist);
+						UpdateProductFeedDataIncrementalImpl updateProductFeedDataImpl = UpdateProductFeedDataIncrementalImpl.getInstance();
+						result = (Integer) updateProductFeedDataImpl.runService(insertORUpdateProductDataObj);
+						if (result == 0) {
+							break;
+						}
+						i = i + (endRecord - startRecord) + 1;
+						if (insertedProductsCount + batchSize > totalProductsCount) {
+							insertedProductsCount = insertedProductsCount
+									+ (totalProductsCount - insertedProductsCount);
+						} else {
+							insertedProductsCount = insertedProductsCount + (endRecord - startRecord) + 1;
+						}
+						startRecord = endRecord + 1;
+					}
+
+
+
+Find Duplicates and ubique values in excel-
+=IF(ISERROR(MATCH(F1:F18,B$1:$B$17,0)),"Unique","Duplicate" )
+
+
+LowesCustomerProductCategoryMap
