@@ -1,0 +1,68 @@
+Install minikube and helm using chocletey on windows:
+
+On Windows Powes-Shell open in Adminstrator mode:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+choco install minikube
+
+choco install kubernetes-helm
+
+helm init  -  should give below result
+Creating C:\Users\Anil.Saladi\.helm
+Creating C:\Users\Anil.Saladi\.helm\repository
+Creating C:\Users\Anil.Saladi\.helm\repository\cache
+Creating C:\Users\Anil.Saladi\.helm\repository\local
+Creating C:\Users\Anil.Saladi\.helm\plugins
+Creating C:\Users\Anil.Saladi\.helm\starters
+Creating C:\Users\Anil.Saladi\.helm\cache\archive
+Creating C:\Users\Anil.Saladi\.helm\repository\repositories.yaml
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com
+Adding local repo with URL: http://127.0.0.1:8879/charts
+$HELM_HOME has been configured at C:\Users\Anil.Saladi\.helm.
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+
+Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+To prevent this, run `helm init` with the --tiller-tls-verify flag.
+For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
+
+helm version --tiller-namespace kube-system
+Client: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
+Server: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
+
+
+helm install tracking-service/ --tiller-namespace kube-system (tiller pod should be run on kube-system ns)
+
+
+helm install tracking-service --namespace kube-system --name v1
+
+----------------------error---------------------------
+
+>kubectl logs v1-tracking-service-945cb956f-5kzrx -n kube-system
+Error from server (BadRequest): container "tracking-service" in pod "v1-tracking-service-945cb956f-5kzrx" is waiting to start: trying and failing to pull image
+
+-----------------------------------------------------------
+
+wget https://get.helm.sh/helm-v2.14.3-linux-amd64.tar.gz
+ tar -zxvf helm-v2.14.3-linux-amd64.tar.gz
+
+
+[root@ip-172-31-83-108 linux-amd64]# cp ./helm $HOME/bin/helm && export PATH=$HOME/bin:$PATH
+[root@ip-172-31-83-108 linux-amd64]# chmod +x ./helm
+[root@ip-172-31-83-108 linux-amd64]# helm
+
+
+
+docker login -u AWS -p eyJwYXlsb2FkIjoiSXRxTmtmWmNTWFIvMHNpb1ZyTk41aDFTRG55ZVVzV3B6aTVCZENYTU5xeElVV2pCeDVnYnA3dXkxOUZZN0hXeS80R2RDYXdRWGZvVFF2L0ZVMXlFbWozdC9UZkQrd3hwN1lxRVBjcmpkTTM1cW4zT
+W5sRGRKQXJaWGt0MDkvVktWcTlndHVySCt0T2hFRTJremY0TTlCV0ZHS2NybU9zVU1RSElRNnpmNEdYNk1tYkVWblJ4L2lvMWw1djZnK3Y1VVM2cjI3YU5CeTJqcUI4bGtWUEs4d0l2UnkvUVpKWU1tN1dGTmxCaSt3NDJLSUNjclMreU82WWVvTDlsY
+k9yUWFvZFdhLzZJb2dDM1R4bnpiR0RLNjh6YzZaQzZJZzZCVlhnL1RESW8raDRZNVoweVRrcUwvbXRKd2R3VCt2dHZZcmUyRW5Lcm5SUFAyMHdXWUwxV3l6eW42UFU4N0gzemtnelhjMjdjUXJrWWVkbUxDYklMcFhZQjZ3RHVpRXZqcms2bC94M3VzS
+1VzWGR0cFY5ejVoTEN0NzEzdFRnd3BiRjVFYWVwb21YV3cxaFJUNGRpUGJMeEh2M01sWEpZazkvNjlTcG5rL1IwVDFTRkxHaVN3ODJENnhXWXdIUFpMa21aNGpqS3lvTVBDK0hlSGg0RXBDMm04SDM1UDJGVFQvelpEL3VYQ2tNMkwrSWJJa0dTVTduQ
+k5FbzVZemt5SC93bHhMMm0xaGNsTEdIcnU2N3EyV3A3cVRJUURoMGdFSXpsSHZDMXNBcHhEd3grUzM1ZVlYU1JFaUwrQ2xPZUdiT1NncmlxNENBU1dXa1NvSjRRSDV3SWFoOHoxNHRGQUIxRExVNWN3MHBSbkY5MGJsLzA3L1V2akpxajY5SUdRdlJQN
+EJiYjc4VksyMW9yTGptVjhlQ2ErREZpdGdtM1kxK2NIL2ZxYTBQaUp2d1hia2NPamRYTEVYWTZsTFVCTmU4Ykttd1hQOEpkNGRyVnBRaFkwOEFORkNQVFpuMjJCT2JONUlXMDlvN0lsODEyY0xpQ1paMUpzV1c0MFJvNlJRbTdUWE5TRnBmbDVsaWw1M
+m53bmx0QjJ1VjBmcWtzQWxzMktHWUdRT3J0SEQ3WE1MNXdjcnk0b3hLR1o2ckhBbVYwdWlKNklXSGU1bkdvbEM3V1JBWlhtUnZqRnJlUEpyOFFGWk41OUxhbm1XY3NEckwxK0lLa1k2WHl4dUY5WERJWVdERTBlNkN1RnRoUTJYa29GcWhXTXp0VllGR
+jB2NlpsT0UvNHV3QTRZWFU3UnBYaldWNDZFQTZIbE5nc0ZuaGV5YlJMdHg1dmUyQm1YUEp5VUhGdnd3dmo1ckp5MjhMWFgwWUE1ckQxOXFpaEE0Tk9SS1RaWk1hWkFnZ0FDdHpZOHkyVDcwaFRPb00wejNRUFAwL1ZOazIybFpWTjhacHNsNk0rYTNFR
+UtwL2pDL2RvVzEwdVd4ZWw4OXc9PSIsImRhdGFrZXkiOiJBUUVCQUhod20wWWFJU0plUnRKbTVuMUc2dXFlZWtYdW9YWFBlNVVGY2U5UnE4LzE0d0FBQUg0d2ZBWUpLb1pJaHZjTkFRY0dvRzh3YlFJQkFEQm9CZ2txaGtpRzl3MEJCd0V3SGdZSllJW
+klBV1VEQkFFdU1CRUVERlc5QUw0Nm8wRFovZ1dxSWdJQkVJQTdxcE5HYjBheU9OTGF2U2E5SythbWxKdjdneGt6S0FkaXpuMGlOOTJKL2dINk9iZ0RBcmVrVGJ2OGYxNEUrblhmTWhncHpwOHRWV0pwcDc0PSIsInZlcnNpb24iOiIyIiwidHlwZSI6I
+kRBVEFfS0VZIiwiZXhwaXJhdGlvbiI6MTU2NTc0NTI4MH0= https://092390458462.dkr.ecr.us-east-1.amazonaws.com
+

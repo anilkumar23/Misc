@@ -1,0 +1,22 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
+kafka-console-consumer --bootstrap-server localhost:9092 --from-beginning --topic test
+kafka-console-consumer --zookeeper localhost:2181 --from-beginning --topic test 
+
+
+
+https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668
+
+https://docs.docker.com/docker-for-windows/install/		(CE Edge (Win50) or higher)
+
+kubectl version
+kubectl config get-contexts
+kubectl config use-context docker-for-desktop
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/alternative/kubernetes-dashboard.yaml
+kubectl proxy
+
+
+docker build -f Dockerfile -t docker-spring-boot .
+docker run -p 8085:8085 docker-spring-boot

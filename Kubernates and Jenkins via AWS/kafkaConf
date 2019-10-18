@@ -1,0 +1,24 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
+kafka-console-consumer --bootstrap-server localhost:9092 --from-beginning --topic test 
+
+
+{"timestamp":1534924535097,"sourceHost":"vweb-046.us-atl","sourceLocation":"us-atl","visitorId":"gw716xubyvo23","deviceId":"7513a93f-891a-4230-ad6f-5992901d3b14","platformSource":"display-sudheer-1","eventSourceType":"dct","url":"localhost","creativeId":"85885","impressionId":"1fcb0802-83c0-4bd6-962c-2a8257bd8c16","lineItemId":"1023874","advertiserId":"5406","businessUnitId":"65465","feedId":"683","configId":"AS/v2-newtracking/300x250","event":{"type":"creativeNavigationLeft","value":"50109182"},"userInformation":{"browserLanguage":"","userAgent":"Apache-HttpClient/4.5.5 (Java/1.8.0_131)"},"geoLocation":{"ip":"100.113.254.XXX","latitude":"0.0","longitude":"0.0","countryCode":"999","cityCode":"100002","metroCode":"20000","postalCode":"0"}}
+
+
+
+https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668
+
+https://docs.docker.com/docker-for-windows/install/		(CE Edge (Win50) or higher)
+
+kubectl version
+kubectl config get-contexts
+kubectl config use-context docker-for-desktop
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/alternative/kubernetes-dashboard.yaml
+kubectl proxy
+
+
+docker build -f Dockerfile -t docker-spring-boot .
+docker run -p 8085:8085 docker-spring-boot

@@ -1,0 +1,66 @@
+Introduction: 
+This file includes creating Iot Thing, connecting to MQTT client and  defining rules for the topic we publish messages from. Finally the published data from MQTT client will get entered into the DynamoDB via lambda function.
+
+Here is the Official Documentation for the below procedure - "https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html"
+
+Procedure:
+1. Login to AWS console and open AWS IOT service.
+
+2. Under "Manage" 
+	Click on
+			Things.
+			Create button.
+			Create a single thing.
+			Provide your name.
+			Next.
+			Create certificate, download .pem file, private key and root CA(have to copy the txt and save).
+			Done.
+
+3. Under "Secure"
+	Click On
+		Policy.
+		Create.
+		Give your name, under Add Statement 
+			Choose Action and enter the following text "iot:*" (remove Strings)
+			Choose Resource ARN and enter the following text "*" (remove Strings)
+		Check Allow under Effect.
+		Create. (Till now ur ploicy had created and you have to attach it to your certificate).
+
+4. Under "Secure"
+	Click On
+		Certificates.
+		Select and click your certificate that u created at step-2.
+		Under Action Click on Attach Policy, select ur policy and click on attach.
+
+5. Under "Test"
+	In "Subscription Topic" box, enter a topic name of ur choice (make not of ur topic name).
+	Click on "Subscribe to Topic".
+	Now publish topic dialogue box will be appeared with a test message. Click on "Publish to Topic" button.
+
+6. Open "Lambda service"
+	Write ur code where it will communicate with AWS DynamoDB and insert the data into it and generate a .jar out of it. (here is a sample source code "https://github.com/anilkumar23/aws-lambda.git")
+	Now Create and Configure ur lambda funtion by providing your .jar file to it.
+
+7. Open "DynamoDB"
+	Create a table with required fields (if u use the sample code it will automatically create a table for u if u haven't).
+	Test ur Lambda Funtion whether it is dumping ur data into DynamoDB by clicking test button on ur Lambda dashboard (If u use sample code it will mostly fails for first test run cause of pending state of the creation of table).
+
+8. Find and go to Amazon SNS service
+	Under Topics Click on "create topic", provide ur topic name and click on create topic button at the bottom.
+	In your topic under Subscriptions Click create subscription select the protocol as AWS lambda, provide your Lambda ARN (endpoint) and click on create Subscription button.
+
+9. Now move back to ur "IoT Service" Under "ACT"
+	Click on "create" give ur Rule Name.
+	Under "Rule query statement" use "2016-03-23" sql version and under "Rule query statement" provide the following string "select * from <ur Topic name> (which u have given in step-5)".
+	Under "Set one or more actions" click on Add Action select/check "Lambda", click on configure Action, select ur lambda function and click "Configure action" at the bottom. 
+	(Optional) If u want u can also set "Error action" in the similar way for a particular service as above.
+	Review ur Rule and click on "create rule" button.
+
+10. Now Under AWS IOT , click test, we will repeat step-5 without subscription step. Under Publish give ur topic name 
+	and provide ur message that u used to test ur lambda funtion as in step-7.
+
+11. You have to see the provided data dumped into the DynamoDB as the same when you tested ur lambda funtion manually
+
+
+
+-----------------------------------------------------	END	 ------------------------------------------------------

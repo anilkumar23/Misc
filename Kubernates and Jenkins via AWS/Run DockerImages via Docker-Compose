@@ -1,0 +1,104 @@
+1. On AWS LINUX MACHINE
+
+-------------------------------	   WithOut jenkins   ---------------------------------------------     
+sudo yum -y update
+sudo yum install -y java
+sudo yum install -y docker
+sudo systemctl start docker
+sudo setfacl -m user:ec2-user:rw /var/run/docker.sock
+sudo curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+
+---------------------------------------------------------------------------------------------------
+
+
+--------------------------------------     With jenkins   -------------------------------------------
+sudo yum -y update
+sudo yum install -y java
+curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum install -y jenkins
+sudo systemctl start jenkins
+systemctl status jenkins
+sudo systemctl enable jenkins
+sudo yum install -y docker
+sudo systemctl start docker
+sudo setfacl -m user:ec2-user:rw /var/run/docker.sock
+sudo curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+sudo usermod -aG docker jenkins
+sudo vi /etc/sudoers  ========> jenkins ALL=(ALL) NOPASSWD: ALL
+sudo service jenkins restart
+
+
+
+Note: If you have memory issues, allocate some  memory for jenkins to run specific jobs. Follow below instructions -  
+
+free -m
+Just add some. Try with 1 GB for begin.
+
+sudo fallocate -l 1G /swapfile (Can replace 1G with 2G, 3G.... based on your system HD size)
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+Check again:
+free -m
+--------------------------------------------------------------------------------------------------------
+
+Create Jenkins pipeline and have to configure credentials and nodes on jenkins dashboard.
+
+-------------------------------------	End	  ----------------------------------------------------------------------
+
+2. On AWS UBUNTU MACHINE:
+
+install jenkins, docker on ubuntu -AWS: 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
+
+sudo apt update
+sudo apt install openjdk-8-jdk
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+sudo systemctl start jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+sudo apt-get install docker.io
+sudo systemctl start docker
+sudo systemctl status docker
+sudo usermod -aG docker jenkins
+sudo docker login
+username:
+password:
+login succeded
+sudo service jenkins restart
+====================================================================================
+If it cannot push inage with authentication error provide full permissions to jenkins slave by:
+sudo vi /etc/sudoers  ========> jenkins ALL=(ALL) NOPASSWD: ALL ==============>(place this cmd in last and save the file and restart your jenkins)
+
+If declaration tool stage fails for pulling JDK with Oracle login issue  then provide your java directory of your slave machine directly instead of install automatically (ex - /usr/lib/jvm/java-8-openjdk-amd64)
+
+If it fails to login to docker hub on push image step then add a step in the push images stage
+sh 'sudo docker login https://index.docker.io/v1/ -u=anil9848 -p=Password@12345'
+=====================================================================================
+
+
+
+Some Usefull CMDs for Docker:
+
+docker images - Fetch images list
+docker ps 	  - Fetch container list only status up (running)
+docker ps -a  -	Fetch container list ALL (running & Exited/Terminated)
+docker rmi <image-name>  - removes images
+docker rm <container-name> - removes container
+docker rmi -f <image-name>  - removes images forcefully
+docker rm -f <container-name> -removes container forcefully
+docker exec -it <container-name> bash - Enter into container.
+
+
+
+
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose

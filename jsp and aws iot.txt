@@ -1,0 +1,27 @@
+http://www.codingraja.com/articles/servlet/applications/servlet-jsp-hibernate-crud-operations
+https://www.javaguides.net/2019/03/jsp-servlet-hibernate-crud-example.html
+https://stackoverflow.com/questions/195212/what-are-the-advantages-of-using-a-get-request-over-a-post-request
+
+
+https://medium.com/@backslash112/create-maven-project-with-servlet-in-intellij-idea-2018-be0d673bd9af
+https://medium.com/@kasunpdh/sample-java-web-application-using-servlets-and-jsp-5621cad2f582
+
+User name,Password,Access key ID,Secret access key,Console login link
+adminnew,,AKIARLAXGQRPP2OWYDVN,CGVRODdd2+53tY7YjCJxAquce2jRK5wsDzZ7VgJt,https://092390458462.signin.aws.amazon.com/console, Pass:Password@12345
+
+http://svn.nl-ams.ignitionone.com/svn/projects/dynamic-creative/live/branches/dynamic-creative-auto-feed-update/webapp/WEB-INF/dynamicCreative.properties
+http://svn.nl-ams.ignitionone.com/svn/projects/dynamic-creative/live/branches/dynamic-creative-auto-feed-update/webapp/WEB-INF/
+
+
+https://medium.com/@gomaketeam/connecting-raspberry-pi-zero-with-amazon-web-services-iot-part-i-working-with-aws-iot-caa8a0f6f91b
+
+
+https://www.roseindia.net/jsp/JspHibernate.shtml
+
+http://www.javawebtutor.com/articles/hibernate/hibernate_web_example.php
+
+https://bushansirgur.in/complete-crud-application-with-spring-boot-hibernate-and-mysql/
+
+--------------------		AWS IOT With raspberry 		----------------------------
+https://www.youtube.com/watch?v=HPp6LHOxRdU&t=971s
+-----------------------------------------------------------------------------------
