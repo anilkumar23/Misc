@@ -25,9 +25,6 @@ cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 kubectl version --short --client
 
-User name,Password,Access key ID,Secret access key,Console login link
-ikshwak,,AKIAZPLJP5PUKK6WVIOT,hU/18ABnB+Sylv5ZinpihqweCdZIgvSaci6a6s80,https://651445660648.signin.aws.amazon.c
-
 
 cluster creation:
 
