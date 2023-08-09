@@ -5,7 +5,8 @@ If you are working with windows make sure u already installed choclatey/choco. B
 1. Generate an ssh key to add onto your github (ssh-keygen -t rsa -b 4096 -C "email@<YOUR MAIL ASSOCIATED WITH GIT>").
 
 2. cat ~/.ssh/id_rsa.pub (Copy the content).
-
+git remote -v
+git remote set-url origin git@github.com:USERNAME/REPONAME.git
 3. Add your ssh key onto your git hub account with below CMD:
    curl -u anilkumar23:DREAMflo123 https://api.github.com/user/keys -d "{ \"title\": \"<ANY NAME>\", \"key\": \"COPIED CONTENT FROM ABOVE STEP\"}".
 
