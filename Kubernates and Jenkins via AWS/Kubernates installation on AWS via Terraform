@@ -47,6 +47,27 @@ cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 
 aws-iam-authenticator help
+--------------------------------------------------------------------------------------------------------
+
+sudo yum install java-1.8.0-amazon-corretto-devel
+JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk'
+PATH="$JAVA_HOME/bin:$PATH"
+export PATH
+wget https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.3.3/apache-maven-3.3.3-bin.tar.gz
+tar -xvf apache-maven-3.3.3-bin.tar.gz
+sudo mv apache-maven-3.3.3 /opt/
+M2_HOME='/opt/apache-maven-3.3.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+
+sudo yum install git -y
+sudo yum install -y docker
+sudo systemctl start docker
+sudo setfacl -m user:ec2-user:rw /var/run/docker.sock
+sudo curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo chkconfig docker on
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 --------------------------------------------------------------------------------------------------------
 Install git and java(if not available)
