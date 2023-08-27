@@ -4,6 +4,7 @@ Terraform Installation--------------------------------------------
 sudo yum install -y yum-utils shadow-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 sudo yum -y install terraform
+mkdir $HOME/bin && cp ./usr/bin/terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
 ------latest------
 
 https://www.linuxnix.com/how-to-install-terraform-and-how-to-create-your-first-infrastructure-in-aws/
@@ -12,7 +13,7 @@ wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_am
 
 unzip terraform_0.11.13_linux_amd64.zip
 
-mkdir $HOME/bin && cp ./terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
+mkdir $HOME/bin && cp ./usr/bin/terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
 
 kubectl installation----------------------------------------------------------------------------------
 
