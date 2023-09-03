@@ -9,9 +9,9 @@ mkdir $HOME/bin && cp ./usr/bin/terraform $HOME/bin/terraform && export PATH=$HO
 
 https://www.linuxnix.com/how-to-install-terraform-and-how-to-create-your-first-infrastructure-in-aws/
 
-wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.zip
 
-unzip terraform_0.11.13_linux_amd64.zip
+unzip terraform_1.5.6_linux_amd64.zip
 
 mkdir $HOME/bin && cp ./usr/bin/terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
 
