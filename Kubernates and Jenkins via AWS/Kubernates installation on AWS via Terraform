@@ -13,7 +13,7 @@ wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.
 
 unzip terraform_1.5.6_linux_amd64.zip
 
-mkdir $HOME/bin && cp ./usr/bin/terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
+mkdir $HOME/bin && cp terraform $HOME/bin/terraform && export PATH=$HOME/bin:$PATH
 
 kubectl installation----------------------------------------------------------------------------------
 
